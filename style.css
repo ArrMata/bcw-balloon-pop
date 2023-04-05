@@ -1,0 +1,226 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+:root{
+    --primary: #f393fd;
+    --primary-dark: #6a3170;
+    --bg: rgb(63, 63, 63);
+    --shadow: 2px 0 8px rgba(0, 0, 0, 0.3);
+    --corners: 8px;
+    --text-color: rgb(37, 37, 37);
+    --dark: rgb(37, 37, 37);
+    --dark-lighten: rgb(63, 62, 62);
+    --light: rgb(205, 205, 205)
+}
+
+body{
+    background-color: var(--bg);
+    font-family: 'Bebas Neue', cursive;
+    font-size: 25pt;
+    color: var(--text-color);
+}
+
+header {
+    margin: 3em 0;
+}
+
+img{
+    max-width: 100%;
+}
+
+main {
+    width: 50%;
+    margin: auto;
+}
+
+form {
+    margin: 0;
+}
+
+input {
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid var(--text-color);
+    outline: none;
+    font-size: 20pt;
+}
+
+button {
+    background-color: var(--primary);
+    color: var(--light);
+    border: 1px solid var(--primary-dark);
+    border-radius: var(--corners);
+    box-shadow: var(--shadow);
+    text-transform: uppercase;
+    padding: 1em;
+}
+
+button:hover{
+    background-color: var(--primary-dark);
+    transition: all .2s ease;
+    cursor: pointer;
+}
+
+.container {
+    width: 50%;
+    margin: auto;
+}
+
+@media screen and (min-width: 700px) {
+    .container {
+        width: 90%;
+    }
+}
+
+.game-container {
+    height: 300px;
+}
+
+.pump-box{
+    background-color: var(--primary-dark);
+    height: 130px;
+    width: 180px;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+    z-index: 2;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+}
+
+.pump-box span {
+    background-color: antiquewhite;
+    padding: .5em;
+    border-radius: var(--corners);
+}
+
+.pump{
+    margin-top: 80px;
+    height: 130px;
+    width: 180px;
+    position: relative;
+    align-self: flex-end;
+    cursor: pointer;
+}
+
+.handle{
+    height: 10px;
+    width: 80px;
+    background-color: var(--dark-lighten);
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    top: -80px;
+    left: 50px;
+    transition: all 0.05s linear;
+    z-index: 1;
+}
+
+.handle::before{
+    display: block;
+    content: " ";
+    background-color: var(--dark-lighten);
+    width: 10px;
+    height: 80px;
+}
+
+.pump:active .handle {
+    top: -20px;
+}
+
+.balloon{
+    height: 120px;
+    width: 100px;
+    background: linear-gradient(45deg, rgba(255,255,255,1) 0%, rgba(0,151,255,1) 13%, rgba(0,151,255,1) 94%, rgba(255,255,255,1) 100%);
+    border-radius: 50%;
+    transition: all .2s ease;
+    animation: balloon-float 5s ease-in-out infinite;
+    align-self: flex-end;
+    margin: 0 auto;
+    box-shadow: inset -10px -10px 12px rgba(0, 0, 0, 0.3)
+}
+
+.balloon.pink{
+    filter: hue-rotate(120deg)
+}
+.balloon.green{
+    filter: hue-rotate(250deg)
+}
+.balloon.red{
+    filter: hue-rotate(150deg);
+}
+
+@keyframes balloon-float {
+    0%,100% {
+        transform: translateY(-25px) rotate(5deg);
+    }
+    50% {
+        transform: translateY(0px) rotate(-5deg);
+    }
+}
+
+.card{
+    background-color: var(--light);
+    padding: 1em;
+    box-shadow: var(--shadow);
+    border-radius: var(--corners);
+}
+
+.shadow{
+    filter: drop-shadow(var(--shadow));
+}
+
+.bg-dark{
+    background-color: var(--dark);
+}
+
+.text-light{
+    color: var(--light);
+}
+
+.d-flex{
+    display: flex;
+    align-items: center;
+}
+
+.d-flex.space-between{
+    justify-content: space-between;
+}
+
+.d-flex.space-around{
+    justify-content: space-around;
+}
+
+.mt-1{
+    margin-top: .5em;
+}
+
+.mt-2{
+    margin-top: 1em;
+}
+
+.mt-3{
+    margin-top: 1.5em;
+}
+
+.mb-1{
+    margin-bottom: .5em;
+}
+
+.mb-2{
+    margin-bottom: 1em;
+}
+
+.mb-3{
+    margin-bottom: 1.5em;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.hidden {
+    display: none !important;
+}
+
